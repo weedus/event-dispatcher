@@ -12,9 +12,17 @@
     "php": ">=7.2",
     "weedus/exceptions": ">=0.0.1"
   },
+  "require-dev": {
+    "codeception/codeception": ">=2.4.1"
+  },
   "autoload": {
     "psr-4": {
       "Weedus\\EventDispatcher\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Weedus\\Tests\\": "tests/"
     }
   }
 }

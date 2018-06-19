@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4e124ac7a7ebb7d98feda805a5aecb14",
+    "packages": [
+        {
+            "name": "weedus/exceptions",
+            "version": "0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/weedus/exceptions.git",
+                "reference": "3db801810293e28f3806a5698074666e2efda098"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/weedus/exceptions/zipball/3db801810293e28f3806a5698074666e2efda098",
+                "reference": "3db801810293e28f3806a5698074666e2efda098",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Weedus\\Exceptions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benno Czopp",
+                    "email": "b.czopp@gmx.net",
+                    "role": "Developer"
+                }
+            ],
+            "time": "2018-06-19T22:47:45+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.2"
+    },
+    "platform-dev": []
+}

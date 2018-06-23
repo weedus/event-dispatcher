@@ -37,10 +37,10 @@ interface EventDispatcherInterface
      *
      * The subscriber is asked for all the events he is
      * interested in and added as a listener for these events.
-     * @param string $subscriber subscriber class, must implement EventSubscriberInterface
+     * @param EventSubscriberInterface $subscriber subscriber
      * @return EventDispatcherInterface
      */
-    public function addSubscriber(string $subscriber): EventDispatcherInterface;
+    public function addSubscriber(EventSubscriberInterface $subscriber): EventDispatcherInterface;
     /**
      * Removes an event listener from the specified events.
      *
@@ -52,10 +52,10 @@ interface EventDispatcherInterface
     /**
      * Removes event listener from the specified events by subscriber.
      *
-     * @param string $subscriber The subscriber class containing the listener(s) and event(s) to be removed
+     * @param EventSubscriberInterface $subscriber The subscriber containing the listener(s) and event(s) to be removed
      * @return EventDispatcherInterface
      */
-    public function removeSubscriber(string $subscriber): EventDispatcherInterface;
+    public function removeSubscriber(EventSubscriberInterface $subscriber): EventDispatcherInterface;
     /**
      * Gets the listeners of a specific event or all listeners sorted by descending priority.
      *

@@ -13,8 +13,9 @@ use Weedus\Exceptions\InterfaceNotImplementedException;
 
 class EventDispatcher implements EventDispatcherInterface
 {
-    private $listeners = array();
-    private $sorted = array();
+    protected $listeners = [];
+    protected $sorted = [];
+
 
     /**
      * Dispatches an event to all registered listeners.
@@ -59,14 +60,11 @@ class EventDispatcher implements EventDispatcherInterface
      *
      * The subscriber is asked for all the events he is
      * interested in and added as a listener for these events.
-     * @param string $subscriber subscriber class, must implement EventSubscriberInterface
+     * @param EventSubscriberInterface $subscriber subscriber class
      * @return EventDispatcherInterface
-     * @throws ClassNotFoundException
-     * @throws InterfaceNotImplementedException
      */
-    public function addSubscriber(string $subscriber): EventDispatcherInterface
+    public function addSubscriber(EventSubscriberInterface $subscriber): EventDispatcherInterface
     {
-        $this->validateSubscriber($subscriber);
         foreach ($subscriber::getSubscribedEvents() as $eventName => $params) {
             if (is_string($params)) {
                 $this->addListener($eventName, array($subscriber, $params));
@@ -120,14 +118,11 @@ class EventDispatcher implements EventDispatcherInterface
     /**
      * Removes event listener from the specified events by subscriber.
      *
-     * @param string $subscriber The subscriber class containing the listener(s) and event(s) to be removed
+     * @param EventSubscriberInterface $subscriber The subscriber containing the listener(s) and event(s) to be removed
      * @return EventDispatcherInterface
-     * @throws ClassNotFoundException
-     * @throws InterfaceNotImplementedException
      */
-    public function removeSubscriber(string $subscriber): EventDispatcherInterface
+    public function removeSubscriber(EventSubscriberInterface $subscriber): EventDispatcherInterface
     {
-        $this->validateSubscriber($subscriber);
         foreach ($subscriber::getSubscribedEvents() as $eventName => $params) {
             if (is_array($params) && is_array($params[0])) {
                 foreach ($params as $listener) {
@@ -243,7 +238,7 @@ class EventDispatcher implements EventDispatcherInterface
      *
      * @param string $eventName The name of the event
      */
-    private function sortListeners(string $eventName)
+    protected function sortListeners(string $eventName)
     {
         krsort($this->listeners[$eventName]);
         $this->sorted[$eventName] = array();

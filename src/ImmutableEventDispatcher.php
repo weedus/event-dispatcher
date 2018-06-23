@@ -61,11 +61,11 @@ class ImmutableEventDispatcher implements EventDispatcherInterface
      *
      * The subscriber is asked for all the events he is
      * interested in and added as a listener for these events.
-     * @param string $subscriber subscriber class, must implement EventSubscriberInterface
+     * @param EventSubscriberInterface $subscriber subscriber
      * @return EventDispatcherInterface
      * @throws BadMethodCallException
      */
-    public function addSubscriber(string $subscriber): EventDispatcherInterface
+    public function addSubscriber(EventSubscriberInterface $subscriber): EventDispatcherInterface
     {
         throw new BadMethodCallException(__METHOD__.": immutable dispatcher must not be modified.");
     }
@@ -86,11 +86,11 @@ class ImmutableEventDispatcher implements EventDispatcherInterface
     /**
      * Removes event listener from the specified events by subscriber.
      *
-     * @param string $subscriber The subscriber class containing the listener(s) and event(s) to be removed
+     * @param EventSubscriberInterface $subscriber The subscriber containing the listener(s) and event(s) to be removed
      * @return EventDispatcherInterface
      * @throws BadMethodCallException
      */
-    public function removeSubscriber(string $subscriber): EventDispatcherInterface
+    public function removeSubscriber(EventSubscriberInterface $subscriber): EventDispatcherInterface
     {
         throw new BadMethodCallException(__METHOD__.": immutable dispatcher must not be modified.");
     }

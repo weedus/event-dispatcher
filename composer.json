@@ -22,7 +22,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Weedus\\Tests\\": "tests/"
+      "Weedus\\EventDispatcher\\Tests\\": "tests/"
     }
   }
 }

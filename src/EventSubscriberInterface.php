@@ -14,6 +14,8 @@ interface EventSubscriberInterface
     /**
      * Returns an array of event names this subscriber wants to listen to.
      *
+     * (has to be static for the need of lazy loading [Symfony], which is not yet tested by me #Weedus)
+     *
      * The array keys are event names and the value can be:
      *
      *  * The method name to call (priority defaults to 0)

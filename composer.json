@@ -1,5 +1,6 @@
 {
   "name": "weedus/event-dispatcher",
+  "description": "symfony like event dispatcher, depends on interface not on class",
   "license": "MIT",
   "authors": [
     {
